@@ -1,0 +1,538 @@
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One|Open+Sans');
+
+$texto: "Open Sans",Tahoma, Verdana;
+$titulo: "Fjalla One", Arial;
+$cor1: #000;
+$cor2: #F00;
+$cor3: #CCC;
+$cor4: #FFF;
+$cor5: #4CAF50;
+$transicao: all 0.5s;
+
+@mixin texto(){
+	font: 1.2em $texto;
+	color: $cor4;
+}
+
+/*---------TAGS-----------*/
+*{
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+body{
+	background: linear-gradient(to top, $cor4, $cor3) fixed;
+}
+header{
+	background: $cor1;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	position: fixed;
+	z-index: 1001;
+	& nav{
+		float: right;
+		margin-top: 13px;
+		/* Deixar ul li do menu inline*/
+		& ul li{
+			display: inline;
+			list-style: none;
+			& a{
+				@include texto();
+				text-decoration: none;
+				transition: $transicao;
+				text-transform: uppercase;
+				margin-left: 20px;
+				&:hover{
+					color: $cor2;
+					text-decoration: none;
+				}
+			}
+		}
+	}
+}
+
+
+footer{  
+	width: 100%;
+	background: $cor1;
+	padding: 20px 0px;
+		a{
+			font-size: 2em;
+			color: $cor4;
+			text-decoration: none;
+			transition: $transicao;
+
+			margin-left: 15px;
+			&:hover{
+				color: $cor2;
+				
+			}
+		}
+		p{
+			@include texto();
+		}
+}
+
+/*---------CLASSES--------*/
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.center{
+	text-align: center;
+}
+
+.clear{
+	clear: both;
+}
+
+.texto{
+	position: absolute;
+	top: 308px;
+	color: $cor2;
+	font-family: $titulo;
+	left: 30px;
+	text-shadow: 4px 8px 21px $cor1;
+	& p{
+		font-size: 1.4em;
+	}
+	& h1{
+		font-size: 3em;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+	& .btn{
+		border: 1px solid $cor4;
+		padding: 5px;
+		transition: $transicao;
+		text-shadow:  0 0 0 transparent;
+		color: $cor4;
+		text-decoration: none;
+		&:hover{
+			background: $cor4;
+			color: $cor1;
+			
+	}
+}
+}
+.container{
+	width: 1000px;
+	margin: auto;
+	& h1{
+		font: 3em $titulo;
+		margin: 50px 0px 20px 0;
+	}
+	& h2{
+		font: 2em $titulo;
+		color: $cor3;
+		margin-bottom: 20px;
+	}
+	& p{
+		font: 1.2em $texto;
+		text-align: justify;
+		margin: 10px 0px;
+	}
+}
+
+.img{
+	width: 90%;
+	background: $cor4;
+	padding: 10px;
+}
+.col1{
+	width: 30%;
+}
+.col2{
+	width: 70%;
+}
+.top{
+	padding-top: 70px;
+}
+/*--------IDS------------*/
+#banner{
+	width: 100%;
+	padding-top: 70px;
+	& img{
+		width: 100%;
+		filter: grayscale(95%);
+		transition: $transicao;
+		&:hover{
+		filter: grayscale(0);
+	}
+}
+}
+
+#menu{
+	border: 1px solid $cor4;
+	padding: 5px 8px;
+	color: $cor4;
+	font-size: 1.5em;
+	border-radius: 5px;
+	float: right;
+	margin-top: 10px;
+	display: none;
+}
+#filmes{
+	width: 100%;
+	background: url("../images/bg.jpg") fixed;
+	padding: 50px 0px;
+		h2{
+			text-transform: uppercase;
+			color: $cor4;
+			margin-bottom: 20px;
+		}
+		.filme{
+			width: 33%;
+			float: left;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		img{
+			filter: grayscale(95%);
+			transition: $transicao;
+			border: 1px solid $cor1;
+
+				&:hover{
+					filter: grayscale(0);
+				}
+		}
+}
+
+#listafilmes{
+	width: 100%;
+
+		h2{
+			text-transform: uppercase;
+			color: $cor1;
+			margin-bottom: 20px;
+		}
+		.filme{
+			width: 33%;
+			float: left;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		img{
+			filter: grayscale(95%);
+			transition: $transicao;
+			border: 1px solid $cor1;
+
+				&:hover{
+					filter: grayscale(0);
+				}
+		}
+}
+
+#sobrefilme{
+	width: 100%;
+
+		h2{
+			text-transform: uppercase;
+			color: $cor1;
+			margin-bottom: 20px;
+		}
+		.filme{
+			width: 33%;
+			float: left;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+		img{
+			filter: grayscale(95%);
+			transition: $transicao;
+			border: 1px solid $cor1;
+
+				&:hover{
+					filter: grayscale(0);
+				}
+		}
+}
+
+#contato{
+
+	width: 100%;
+		   h1{
+			text-transform: uppercase;
+			color: $cor1;
+			margin-bottom: 20px;
+		}
+		.formulario{
+		& label{
+			width: 100%;
+			@include texto();
+			color: $cor1;
+		}
+		& input{
+			    width: 100%;
+			    padding: 12px 30px;
+			    margin: 8px 0;
+			    display: inline-block;
+			    border: 1px solid #ccc;
+			    border-radius: 4px;
+			    box-sizing: border-box;
+			    @include texto();
+			    color: $cor1;
+		}
+		& textarea{
+				width: 100%;
+			    padding: 12px 20px;
+			    margin: 8px 0;
+			    display: inline-block;
+			    border: 1px solid #ccc;
+			    border-radius: 4px;
+			    box-sizing: border-box;
+			    @include texto();
+			    color: $cor1;
+		}
+		& button{
+			    width: 50%;
+			    background-color: $cor5;
+			    color: white;
+			    padding: 14px 20px;
+			    margin: 8px 0;
+			    border: none;
+			    border-radius: 4px;
+			    cursor: pointer;
+		}
+		}
+}
+
+
+/*-------MEDIAS QUERIES--------*/
+
+
+@media (max-width: 320px){
+	#menu{
+		display: block;
+	}
+	nav{
+		display: none;
+		background: $cor1;
+		width: 100%;
+		float: left;
+	    position: relative;
+	    z-index: 100;
+	    margin-top: 0 !important;
+
+		ul li{
+			display: block;
+			a{
+				float: left;
+				padding: 10px;
+				width: 100%;
+				border-bottom: 1px solid $cor4;
+			}
+		}
+	}
+	.texto{
+		top:90px;
+		p{
+			font-size: 0.8em;
+		}
+		h1{
+			font-size: 1.5em;
+		}
+	}
+	.container{
+		width: 320px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	#filmes{
+		.filme{
+			width: 100%;
+		}
+	}
+	.col1, .col2{
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.top{
+		padding-top: 90px;
+	}
+
+	#contato{
+		width: 320px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+}
+
+
+
+@media (min-width: 321px) and (max-width: 480px){
+	#menu{
+		display: block;
+	}
+	nav{
+		display: none;
+		background: $cor1;
+		width: 100%;
+		float: left;
+	    position: relative;
+	    z-index: 100;
+	    margin-top: 0 !important;
+
+		ul li{
+			display: block;
+			a{
+				float: left;
+				padding: 10px;
+				width: 100%;
+				border-bottom: 1px solid $cor4;
+			}
+		}
+	}
+	.texto{
+		top:90px;
+		p{
+			font-size: 0.8em;
+		}
+		h1{
+			font-size: 1.5em;
+		}
+	}
+	.container{
+		width: 310px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	#filmes{
+		.filme{
+			width: 100%;
+		}
+	}
+	.col1, .col2{
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.top{
+		padding-top: 90px;
+	}
+	#contato{
+		width: 300px;
+		padding: 10px;
+		box-sizing: border-box;
+	}		
+
+}
+@media (min-width: 481px) and (max-width: 800px){
+	#menu{
+		display: block;
+	}
+	nav{
+		display: none;
+		background: $cor1;
+		width: 100%;
+		float: left;
+	    position: relative;
+	    z-index: 100;
+	    margin-top: 0 !important;
+
+		ul li{
+			display: block;
+			a{
+				float: left;
+				padding: 10px;
+				width: 100%;
+				border-bottom: 1px solid $cor4;
+			}
+		}
+	}
+	.texto{
+		top:90px;
+		p{
+			font-size: 0.8em;
+		}
+		h1{
+			font-size: 1.5em;
+		}
+	}
+	.container{
+		width: 470px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	#filmes{
+		.filme{
+			width: 100%;
+		}
+	}
+	.col1, .col2{
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.top{
+		padding-top: 90px;
+	}
+	#contato{
+		width: 433px;
+		margin: 10px;
+		box-sizing: border-box;
+	}
+}
+
+@media (min-width: 801px) and (max-width: 1200px){
+	#menu{
+		display: block;
+	}
+	nav{
+		display: none;
+		background: $cor1;
+		width: 100%;
+		float: left;
+	    position: relative;
+	    z-index: 100;
+	    margin-top: 0 !important;
+
+		ul li{
+			display: block;
+			a{
+				float: left;
+				padding: 10px;
+				width: 100%;
+				border-bottom: 1px solid $cor4;
+			}
+		}
+	}
+	.texto{
+		top:90px;
+		p{
+			font-size: 0.8em;
+		}
+		h1{
+			font-size: 1.5em;
+		}
+	}
+	.container{
+		width: 710px;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	#filmes{
+		.filme{
+			width: 100%;
+		}
+	}
+	.col1, .col2{
+		width: 100%;
+		padding: 10px;
+		box-sizing: border-box;
+	}
+	.top{
+		padding-top: 90px;
+	}
+	#contato{
+		width: 674px;
+		margin-top: 10px;
+		box-sizing: border-box;
+	}
+}
